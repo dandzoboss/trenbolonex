@@ -139,6 +139,7 @@
       font-weight: bold;
       transition: all 0.3s ease;
       box-shadow: 0 0 12px #ffd700;
+      margin-top: 2rem; /* Ensure the button is properly spaced below the executor preview */
     }
 
     .main-download:hover {
@@ -231,24 +232,34 @@
 
   <div class="navbar">
     <div class="navbar-left">
-      <img src="Tren.png" alt="TrenboloneX Icon" class="icon-img">
+      <img src="tren.png" alt="TrenboloneX Icon" class="icon-img">
       <div class="brand">TrenboloneX</div>
     </div>
     <div class="navbar-right">
-      <a href="https://gofile.io/d/" target="_blank">Download</a>
+      <a href="https://gofile.io/d/n3o77r" target="_blank">Download</a>
       <a href="https://discord.gg/FxNfxXTsPT" target="_blank"><img src="discord.png" alt="Discord" style="height: 20px; vertical-align: middle; margin-right: 6px;"> Discord</a>
     </div>
   </div>
 
   <header>
-    <div class="header-icons">
-      <img src="Tren.png" alt="TrenboloneX Icon">
-      <img src="Tren.png" alt="TrenboloneX Icon">
-    </div>
-    <h1>TrenboloneX</h1>
-    <h2>The Future of Exploiting Starts Now</h2>
-    <a href="https://gofile.io/d/" class="main-download" target="_blank">Download Now</a>
-  </header>
+  <h1>TrenboloneX</h1>
+  <h2>The Future of Exploiting Starts Now</h2>
+
+  <!-- Tilted UI Preview -->
+  <div style="margin: 3rem auto 1rem; max-width: 600px; perspective: 1000px;">
+    <img src="executor-ui.png" alt="Executor UI Preview" style="
+      width: 100%;
+      border-radius: 20px;
+      transform: rotateY(-12deg) rotateX(5deg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.2);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    " onmouseover="this.style.transform='rotateY(0deg) rotateX(0deg)'; this.style.boxShadow='0 30px 60px rgba(0,0,0,0.9), 0 0 40px rgba(255,215,0,0.3)';"
+    onmouseout="this.style.transform='rotateY(-12deg) rotateX(5deg)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.2)';"
+    />
+  </div>
+
+  <a href="https://gofile.io/d/n3o77r" class="main-download" target="_blank">Download Now</a>
+</header>
 
   <section class="features">
     <h2>Why Choose TrenboloneX?</h2>
@@ -282,7 +293,7 @@
 
   <section class="video-section">
     <h2>Watch TrenboloneX In Action</h2>
-    <iframe src="https://www.youtube.com/embed/aJagEu_IEfE?si=4UJVEloejoz6qeyV" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/HnmZzO8zMMs?si=fxc0ULLGlvUvDYbG" allowfullscreen></iframe>
   </section>
 
   <footer>
