@@ -25,6 +25,9 @@
       color: #fff;
       overflow-x: hidden;
       animation: fadeIn 1.5s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     @keyframes fadeIn {
@@ -32,14 +35,17 @@
       100% { opacity: 1; }
     }
 
-    /* New container styles */
-    .main-container {
-      max-width: 1000px; /* Narrower container */
-      margin: 0 auto;
-      padding: 0 20px;
+    /* Full-width navbar container */
+    .navbar-container {
       width: 100%;
+      background: #111;
+      box-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
+    /* Navbar content - centered with max-width */
     .navbar {
       height: 80px;
       overflow: visible;
@@ -47,11 +53,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 20px;
-      background: #111;
-      box-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      max-width: 1000px;
+      margin: 0 auto;
       width: 100%;
     }
 
@@ -101,6 +104,15 @@
       vertical-align: middle;
     }
 
+    /* Main content container */
+    .main-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+      flex: 1;
+    }
+
     header {
       padding: 4rem 20px;
       background: linear-gradient(120deg, #1a1a1a, #0d0d0d, #111);
@@ -125,16 +137,16 @@
 
     .header-left {
       flex: 0 0 45%;
-      max-width: 450px; /* Reduced from 500px */
+      max-width: 450px;
     }
 
     .header-right {
       flex: 0 0 45%;
-      max-width: 450px; /* Reduced from 500px */
+      max-width: 450px;
     }
 
     header h1 {
-      font-size: 4rem; /* Slightly reduced from 5rem */
+      font-size: 4rem;
       color: #ffd700;
       margin: 0;
       text-shadow: 0 0 15px #ffd700;
@@ -151,7 +163,7 @@
     }
 
     header h2 {
-      font-size: 1.8rem; /* Slightly reduced from 2rem */
+      font-size: 1.8rem;
       color: #bbb;
       margin-top: 1rem;
     }
@@ -163,7 +175,7 @@
 
     .preview-img {
       width: 100%;
-      max-width: 500px; /* Reduced from 600px */
+      max-width: 500px;
       height: auto;
       border-radius: 20px;
       transform: rotateY(-12deg) rotateX(5deg);
@@ -181,7 +193,7 @@
       border-radius: 15px;
       padding: 2rem;
       margin: 3rem auto;
-      max-width: 900px; /* Reduced from 1000px */
+      max-width: 900px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.1);
       display: flex;
       flex-wrap: wrap;
@@ -238,28 +250,28 @@
 
     .features {
       padding: 3rem 20px;
-      max-width: 1000px; /* Reduced from 1200px */
+      max-width: 1000px;
       margin: auto;
       animation: fadeIn 2s ease-out;
     }
 
     .features h2 {
       text-align: center;
-      font-size: 2.3rem; /* Slightly reduced from 2.5rem */
+      font-size: 2.3rem;
       margin-bottom: 2.5rem;
       color: #ffd700;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted from 270px */
-      gap: 1.5rem; /* Reduced from 2rem */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
       align-items: stretch;
     }
 
     .feature-card {
       background: #1a1a1a;
-      padding: 1.5rem; /* Reduced from 2rem */
+      padding: 1.5rem;
       border-radius: 15px;
       text-align: center;
       border: 1px solid #333;
@@ -305,15 +317,22 @@
       border: none;
     }
 
+    /* Full-width footer container */
+    .footer-container {
+      width: 100%;
+      background-color: #0d0d0d;
+      border-top: 1px solid #222;
+    }
+
+    /* Footer content - centered with max-width */
     footer {
       text-align: center;
       padding: 2rem 20px;
       color: #888;
       font-size: 0.9rem;
-      border-top: 1px solid #222;
-      background-color: #0d0d0d;
       animation: fadeIn 2s ease-out;
-      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     /* Responsive adjustments */
@@ -343,11 +362,11 @@
       }
 
       header h1 {
-        font-size: 3rem; /* Smaller on mobile */
+        font-size: 3rem;
       }
 
       header h2 {
-        font-size: 1.4rem; /* Smaller on mobile */
+        font-size: 1.4rem;
       }
     }
 
@@ -380,19 +399,21 @@
 </head>
 <body>
 
-  <div class="navbar">
-    <div class="navbar-left">
-      <img src="TrenLogoNoBG.png" alt="Tren.GG Logo" class="logo-img">
-    </div>
-    <div class="navbar-right">
-      <a href="https://gofile.io/d/n3o77r" target="_blank">
-        <img src="download-icon.png" alt="Download" class="btn-icon">
-        Download
-      </a>
-      <a href="https://discord.gg/FxNfxXTsPT" target="_blank">
-        <img src="discord.png" alt="Discord" class="btn-icon">
-        Discord
-      </a>
+  <div class="navbar-container">
+    <div class="navbar">
+      <div class="navbar-left">
+        <img src="TrenLogoNoBG.png" alt="Tren.GG Logo" class="logo-img">
+      </div>
+      <div class="navbar-right">
+        <a href="https://gofile.io/d/n3o77r" target="_blank">
+          <img src="download-icon.png" alt="Download" class="btn-icon">
+          Download
+        </a>
+        <a href="https://discord.gg/FxNfxXTsPT" target="_blank">
+          <img src="discord.png" alt="Discord" class="btn-icon">
+          Discord
+        </a>
+      </div>
     </div>
   </div>
 
@@ -459,11 +480,13 @@
       <h2>Watch Tren.GG In Action</h2>
       <iframe src="https://www.youtube.com/embed/_5u3Au7-A7g?si=3hhKei2mBDZxRFRu" allowfullscreen></iframe>
     </section>
+  </main>
 
+  <div class="footer-container">
     <footer>
       &copy; 2025 Tren.GG. All rights reserved.
     </footer>
-  </main>
+  </div>
 
 </body>
 </html>
