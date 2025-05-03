@@ -32,18 +32,29 @@
       100% { opacity: 1; }
     }
 
+    /* New container styles */
+    .main-container {
+      max-width: 1000px; /* Narrower container */
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
     .navbar {
-      height: 80px; /* Fixed height */
-      overflow: visible; /* Let the logo "stick out" */
+      height: 80px;
+      overflow: visible;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 2rem;
+      padding: 0 20px;
       background: #111;
       box-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
       position: sticky;
       top: 0;
       z-index: 1000;
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
     }
 
     .navbar-left {
@@ -52,13 +63,13 @@
     }
 
     .logo-img {
-      height: 150px; /* Big logo */
+      height: 150px;
       width: auto;
       object-fit: contain;
       margin-top: 0;
       margin-bottom: 0;
       display: block;
-      transform: translateY(10px); /* Push it down slightly to center it visually */
+      transform: translateY(10px);
     }
 
     .navbar-right {
@@ -92,9 +103,8 @@
       vertical-align: middle;
     }
 
-    /* For symmetry in header */
     header {
-      padding: 4rem 2rem;
+      padding: 4rem 20px;
       background: linear-gradient(120deg, #1a1a1a, #0d0d0d, #111);
       background-size: 400% 400%;
       animation: gradientAnim 10s ease infinite, fadeIn 2s ease-out;
@@ -104,6 +114,9 @@
       justify-content: center;
       gap: 3rem;
       text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
     }
 
     @keyframes gradientAnim {
@@ -114,21 +127,22 @@
 
     .header-left {
       flex: 0 0 45%;
-      max-width: 500px;
+      max-width: 450px; /* Reduced from 500px */
     }
 
     .header-right {
       flex: 0 0 45%;
-      max-width: 500px;
+      max-width: 450px; /* Reduced from 500px */
     }
 
-   header h1 {
-  font-size: 5rem; /* Increased size */
-  color: #ffd700;
-  margin: 0;
-  text-shadow: 0 0 15px #ffd700;
-  animation: glowText 2s ease-in-out infinite alternate;
-}
+    header h1 {
+      font-size: 4rem; /* Slightly reduced from 5rem */
+      color: #ffd700;
+      margin: 0;
+      text-shadow: 0 0 15px #ffd700;
+      animation: glowText 2s ease-in-out infinite alternate;
+    }
+    
     @keyframes glowText {
       from {
         text-shadow: 0 0 8px #ffd700;
@@ -138,12 +152,11 @@
       }
     }
 
-   /* Adjusting description spacing */
-header h2 {
-  font-size: 2rem; /* Increased size */
-  color: #bbb;
-  margin-top: 1rem; /* Slightly increased margin-top */
-}
+    header h2 {
+      font-size: 1.8rem; /* Slightly reduced from 2rem */
+      color: #bbb;
+      margin-top: 1rem;
+    }
 
     .preview-container {
       perspective: 1000px;
@@ -151,14 +164,14 @@ header h2 {
     }
 
     .preview-img {
-  width: 100%;
-  max-width: 600px; /* Increased max width */
-  height: auto; /* Adjust height automatically */
-  border-radius: 20px;
-  transform: rotateY(-12deg) rotateX(5deg);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.2);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
+      width: 100%;
+      max-width: 500px; /* Reduced from 600px */
+      height: auto;
+      border-radius: 20px;
+      transform: rotateY(-12deg) rotateX(5deg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.2);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
 
     .preview-img:hover {
       transform: rotateY(0deg) rotateX(0deg);
@@ -170,7 +183,7 @@ header h2 {
       border-radius: 15px;
       padding: 2rem;
       margin: 3rem auto;
-      max-width: 1000px;
+      max-width: 900px; /* Reduced from 1000px */
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.1);
       display: flex;
       flex-wrap: wrap;
@@ -226,29 +239,29 @@ header h2 {
     }
 
     .features {
-      padding: 3rem 1.5rem;
-      max-width: 1200px;
+      padding: 3rem 20px;
+      max-width: 1000px; /* Reduced from 1200px */
       margin: auto;
       animation: fadeIn 2s ease-out;
     }
 
     .features h2 {
       text-align: center;
-      font-size: 2.5rem;
+      font-size: 2.3rem; /* Slightly reduced from 2.5rem */
       margin-bottom: 2.5rem;
       color: #ffd700;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted from 270px */
+      gap: 1.5rem; /* Reduced from 2rem */
       align-items: stretch;
     }
 
     .feature-card {
       background: #1a1a1a;
-      padding: 2rem;
+      padding: 1.5rem; /* Reduced from 2rem */
       border-radius: 15px;
       text-align: center;
       border: 1px solid #333;
@@ -276,7 +289,7 @@ header h2 {
     .video-section {
       max-width: 800px;
       margin: 4rem auto;
-      padding: 0 1rem;
+      padding: 0 20px;
       animation: fadeIn 2.5s ease-out;
     }
 
@@ -296,12 +309,14 @@ header h2 {
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 20px;
       color: #888;
       font-size: 0.9rem;
       border-top: 1px solid #222;
       background-color: #0d0d0d;
       animation: fadeIn 2s ease-out;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     /* Responsive adjustments */
@@ -329,6 +344,40 @@ header h2 {
       .details-info, .details-download {
         width: 100%;
       }
+
+      header h1 {
+        font-size: 3rem; /* Smaller on mobile */
+      }
+
+      header h2 {
+        font-size: 1.4rem; /* Smaller on mobile */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        height: auto;
+        padding: 10px 15px;
+        flex-direction: column;
+      }
+
+      .logo-img {
+        height: 120px;
+        transform: none;
+      }
+
+      .navbar-right {
+        margin-top: 10px;
+      }
+
+      .navbar-right a {
+        margin: 0 5px;
+        padding: 8px 15px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -350,72 +399,74 @@ header h2 {
     </div>
   </div>
 
-  <header>
-    <div class="header-left">
-      <div class="preview-container">
-        <img src="executor-ui.png" alt="Executor UI Preview" class="preview-img">
+  <main class="main-container">
+    <header>
+      <div class="header-left">
+        <div class="preview-container">
+          <img src="executor-ui.png" alt="Executor UI Preview" class="preview-img">
+        </div>
       </div>
-    </div>
-    
-    <div class="header-right">
-      <h1>Tren.GG</h1>
-      <h2>Steroids, but for Roblox.</h2>
-    </div>
-  </header>
+      
+      <div class="header-right">
+        <h1>Tren.GG</h1>
+        <h2>Steroids, but for Roblox.</h2>
+      </div>
+    </header>
 
-  <div class="details-panel">
-    <div class="details-info">
-      <h3>Tren.GG Details</h3>
-      <p><strong>Version:</strong> 2.0.1</p>
-      <p><strong>Updated:</strong> 5th May 2025</p>
-      <p>The most powerful free Roblox executor available today.</p>
-    </div>
-    <div class="details-download">
-      <a href="https://gofile.io/d/n3o77r" class="download-btn" target="_blank">
-        <img src="download-icon.png" alt="Download" class="btn-icon">
-        Download Now
-      </a>
-    </div>
-  </div>
-
-  <section class="features">
-    <h2>Why Choose Tren.GG?</h2>
-    <div class="grid">
-      <div class="feature-card">
-        <h3>100% Free</h3>
-        <p>Unlock elite features without paying a dime — Tren.GG is completely free.</p>
+    <div class="details-panel">
+      <div class="details-info">
+        <h3>Tren.GG Details</h3>
+        <p><strong>Version:</strong> 2.0.1</p>
+        <p><strong>Updated:</strong> 5th May 2025</p>
+        <p>The most powerful free Roblox executor available today.</p>
       </div>
-      <div class="feature-card">
-        <h3>Always Improving</h3>
-        <p>TrenboloneX evolves constantly, bringing better performance with every update.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Fast Updates</h3>
-        <p>Stay ahead of patches with lightning-fast executor updates.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Customizable</h3>
-        <p>Make it yours. TrenboloneX gives you full control over its look and feel.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Premium Support</h3>
-        <p>Need help? Our community and dev team have your back 24/7.</p>
-      </div>
-      <div class="feature-card">
-        <h3>99% UNC</h3>
-        <p>Enjoy full UNC and sUNC capabilities without limitations.</p>
+      <div class="details-download">
+        <a href="https://gofile.io/d/n3o77r" class="download-btn" target="_blank">
+          <img src="download-icon.png" alt="Download" class="btn-icon">
+          Download Now
+        </a>
       </div>
     </div>
-  </section>
 
-  <section class="video-section">
-    <h2>Watch Tren.GG In Action</h2>
-    <iframe src="https://www.youtube.com/embed/_5u3Au7-A7g?si=3hhKei2mBDZxRFRu" allowfullscreen></iframe>
-  </section>
+    <section class="features">
+      <h2>Why Choose Tren.GG?</h2>
+      <div class="grid">
+        <div class="feature-card">
+          <h3>100% Free</h3>
+          <p>Unlock elite features without paying a dime — Tren.GG is completely free.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Always Improving</h3>
+          <p>TrenboloneX evolves constantly, bringing better performance with every update.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Fast Updates</h3>
+          <p>Stay ahead of patches with lightning-fast executor updates.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Customizable</h3>
+          <p>Make it yours. TrenboloneX gives you full control over its look and feel.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Premium Support</h3>
+          <p>Need help? Our community and dev team have your back 24/7.</p>
+        </div>
+        <div class="feature-card">
+          <h3>99% UNC</h3>
+          <p>Enjoy full UNC and sUNC capabilities without limitations.</p>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    &copy; 2025 Tren.GG. All rights reserved.
-  </footer>
+    <section class="video-section">
+      <h2>Watch Tren.GG In Action</h2>
+      <iframe src="https://www.youtube.com/embed/_5u3Au7-A7g?si=3hhKei2mBDZxRFRu" allowfullscreen></iframe>
+    </section>
+
+    <footer>
+      &copy; 2025 Tren.GG. All rights reserved.
+    </footer>
+  </main>
 
 </body>
 </html>
