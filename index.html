@@ -91,17 +91,19 @@
       vertical-align: middle;
     }
 
-    header {
-      padding: 4rem 2rem;
-      background: linear-gradient(120deg, #1a1a1a, #0d0d0d, #111);
-      background-size: 400% 400%;
-      animation: gradientAnim 10s ease infinite, fadeIn 2s ease-out;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 3rem;
-    }
+    /* For symmetry in header */
+header {
+  padding: 4rem 2rem;
+  background: linear-gradient(120deg, #1a1a1a, #0d0d0d, #111);
+  background-size: 400% 400%;
+  animation: gradientAnim 10s ease infinite, fadeIn 2s ease-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  text-align: center;
+}
 
     @keyframes gradientAnim {
       0% {background-position: 0% 50%;}
@@ -119,14 +121,13 @@
       max-width: 500px;
     }
 
-    header h1 {
-      font-size: 4.5rem; /* Increased size */
-      color: #ffd700;
-      margin: 0.5rem 0;
-      text-shadow: 0 0 15px #ffd700;
-      animation: glowText 2s ease-in-out infinite alternate;
-    }
-
+   header h1 {
+  font-size: 5rem; /* Increased size */
+  color: #ffd700;
+  margin: 0;
+  text-shadow: 0 0 15px #ffd700;
+  animation: glowText 2s ease-in-out infinite alternate;
+}
     @keyframes glowText {
       from {
         text-shadow: 0 0 8px #ffd700;
@@ -136,11 +137,12 @@
       }
     }
 
-    header h2 {
-      font-size: 1.8rem; /* Increased size */
-      color: #bbb;
-      margin-bottom: 2rem;
-    }
+   /* Adjusting description spacing */
+header h2 {
+  font-size: 2rem; /* Increased size */
+  color: #bbb;
+  margin-top: 1rem; /* Slightly increased margin-top */
+}
 
     .preview-container {
       perspective: 1000px;
@@ -148,13 +150,14 @@
     }
 
     .preview-img {
-      width: 100%;
-      max-width: 450px; /* Limited max width */
-      border-radius: 20px;
-      transform: rotateY(-12deg) rotateX(5deg);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.2);
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-    }
+  width: 100%;
+  max-width: 600px; /* Increased max width */
+  height: auto; /* Adjust height automatically */
+  border-radius: 20px;
+  transform: rotateY(-12deg) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.2);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
 
     .preview-img:hover {
       transform: rotateY(0deg) rotateX(0deg);
