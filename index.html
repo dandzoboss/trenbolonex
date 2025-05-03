@@ -9,7 +9,7 @@
   <meta property="og:description" content="Unlock elite features, fast updates, and customizable power — all for free with Tren.GG" />
   <meta property="og:image" content="" />
   <meta property="og:url" content="https://trengg.vercel.app/" />
-  
+
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&amp;display=swap" rel="stylesheet">
   <style>
     * {
@@ -43,22 +43,8 @@
       z-index: 1000;
     }
 
-    .navbar-left {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .icon-img {
-      width: 65px;
-      height: 65px;
-      border-radius: 12px;
-    }
-
-    .brand {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #ffd700;
+    .navbar-left img {
+      height: 80px;
     }
 
     .navbar-right a {
@@ -71,6 +57,13 @@
       font-weight: bold;
       transition: all 0.3s ease;
       box-shadow: 0 0 8px #ffd700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .navbar-right a img {
+      height: 20px;
     }
 
     .navbar-right a:hover {
@@ -80,62 +73,57 @@
     }
 
     header {
-      text-align: center;
-      padding: 5rem 1rem 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem 2rem;
+      gap: 2rem;
       background: linear-gradient(120deg, #1a1a1a, #0d0d0d, #111);
-      background-size: 400% 400%;
-      animation: gradientAnim 10s ease infinite, fadeIn 2s ease-out;
-      position: relative;
     }
 
-    @keyframes gradientAnim {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+    .header-left img {
+      width: 250px;
+      max-width: 100%;
     }
 
-    header h1 {
-      font-size: 3.7rem;
+    .header-right {
+      max-width: 500px;
+    }
+
+    .header-right h1 {
+      font-size: 3rem;
       color: #ffd700;
       margin: 0.5rem 0;
-      text-shadow: 0 0 15px #ffd700;
-      animation: glowText 2s ease-in-out infinite alternate;
     }
 
-    @keyframes glowText {
-      from {
-        text-shadow: 0 0 8px #ffd700;
-      }
-      to {
-        text-shadow: 0 0 20px #ffd700, 0 0 30px #ffec84;
-      }
-    }
-
-    header h2 {
-      font-size: 1.3rem;
+    .header-right h2 {
+      font-size: 1.2rem;
       color: #bbb;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
-    .header-icons {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 60%; /* Control the space between the icons */
+    .executor-preview {
+      width: 100%;
+      max-width: 600px;
+      perspective: 1000px;
+      margin: 2rem auto;
     }
 
-    .header-icons img {
-      width: 150px;  /* Increased icon size */
-      height: 150px;
-      object-fit: contain;
+    .executor-preview img {
+      width: 100%;
+      border-radius: 20px;
+      transform: rotateY(-12deg) rotateX(5deg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.2);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .executor-preview img:hover {
+      transform: rotateY(0deg) rotateX(0deg);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 40px rgba(255,215,0,0.3);
     }
 
     .main-download {
-      display: inline-block;
       background: #ffd700;
       color: #000;
       padding: 15px 35px;
@@ -145,7 +133,9 @@
       font-weight: bold;
       transition: all 0.3s ease;
       box-shadow: 0 0 12px #ffd700;
-      margin-top: 2rem; /* Ensure the button is properly spaced below the executor preview */
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .main-download:hover {
@@ -154,11 +144,25 @@
       box-shadow: 0 0 20px #ffd700;
     }
 
+    .download-box {
+      background: #1a1a1a;
+      margin: 4rem auto;
+      padding: 2rem;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+      border: 1px solid #333;
+      text-align: center;
+    }
+
+    .download-box p {
+      margin: 0.5rem 0;
+    }
+
     .features {
       padding: 3rem 1.5rem;
       max-width: 1200px;
       margin: auto;
-      animation: fadeIn 2s ease-out;
     }
 
     .features h2 {
@@ -172,7 +176,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       gap: 2rem;
-      align-items: stretch;
     }
 
     .feature-card {
@@ -182,38 +185,30 @@
       text-align: center;
       border: 1px solid #333;
       transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 0 12px rgba(255, 215, 0, 0.1);
     }
 
     .feature-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
-      animation: glowText 1.5s ease-in-out infinite alternate;
     }
 
     .feature-card h3 {
       color: #ffd700;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
     }
 
     .feature-card p {
       color: #ccc;
-      font-size: 0.95rem;
     }
 
     .video-section {
       max-width: 800px;
       margin: 4rem auto;
       padding: 0 1rem;
-      animation: fadeIn 2.5s ease-out;
     }
 
     .video-section h2 {
       text-align: center;
       color: #ffd700;
-      font-size: 2rem;
-      margin-bottom: 1rem;
     }
 
     iframe {
@@ -230,42 +225,36 @@
       font-size: 0.9rem;
       border-top: 1px solid #222;
       background-color: #0d0d0d;
-      animation: fadeIn 2s ease-out;
     }
   </style>
 </head>
 <body>
-
   <div class="navbar">
     <div class="navbar-left">
-      <img src="tren.png" alt="Tren.GG Icon" class="icon-img">
-      <div class="brand">Tren.GG</div>
+      <img src="TrenLogoNoBG.png" alt="Tren.GG Logo">
     </div>
     <div class="navbar-right">
-      <a href="https://gofile.io/d/n3o77r" target="_blank">Download</a>
-      <a href="https://discord.gg/FxNfxXTsPT" target="_blank"><img src="discord.png" alt="Discord" style="height: 20px; vertical-align: middle; margin-right: 6px;"> Discord</a>
+      <a href="https://gofile.io/d/n3o77r" target="_blank"><img src="download-icon.png">Download</a>
+      <a href="https://discord.gg/FxNfxXTsPT" target="_blank"><img src="discord.png">Discord</a>
     </div>
   </div>
 
   <header>
-  <h1>Tren.GG</h1>
-  <h2>Steroids, but for Roblox.</h2>
+    <div class="header-left">
+      <img src="executor-ui.png" alt="Executor Preview">
+    </div>
+    <div class="header-right">
+      <h1>Tren.GG</h1>
+      <h2>Steroids, but for Roblox.</h2>
+      <a href="https://gofile.io/d/n3o77r" class="main-download" target="_blank"><img src="download-icon.png">Download Now</a>
+    </div>
+  </header>
 
-  <!-- Tilted UI Preview -->
-  <div style="margin: 3rem auto 1rem; max-width: 600px; perspective: 1000px;">
-    <img src="executor-ui.png" alt="Executor UI Preview" style="
-      width: 100%;
-      border-radius: 20px;
-      transform: rotateY(-12deg) rotateX(5deg);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.2);
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-    " onmouseover="this.style.transform='rotateY(0deg) rotateX(0deg)'; this.style.boxShadow='0 30px 60px rgba(0,0,0,0.9), 0 0 40px rgba(255,215,0,0.3)';"
-    onmouseout="this.style.transform='rotateY(-12deg) rotateX(5deg)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.2)';"
-    />
+  <div class="download-box">
+    <p><strong>Version:</strong> 2.0.1</p>
+    <p><strong>Updated:</strong> 5th May 2025</p>
+    <a href="https://gofile.io/d/n3o77r" class="main-download" target="_blank"><img src="download-icon.png">Download</a>
   </div>
-
-  <a href="https://gofile.io/d/n3o77r" class="main-download" target="_blank">Download Now</a>
-</header>
 
   <section class="features">
     <h2>Why Choose Tren.GG?</h2>
@@ -305,6 +294,5 @@
   <footer>
     &copy; 2025 Tren.GG. All rights reserved.
   </footer>
-
 </body>
 </html>
