@@ -50,7 +50,7 @@
       height: 80px;
       overflow: visible;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between; /* This pushes logo left and buttons right */
       align-items: center;
       padding: 0 20px;
       max-width: 1000px;
@@ -113,11 +113,17 @@
       flex: 1;
     }
 
-    header {
-      padding: 4rem 20px;
+    /* Header with distinct background */
+    .header-container {
+      width: 100%;
       background: linear-gradient(120deg, #1a1a1a, #0d0d0d, #111);
       background-size: 400% 400%;
       animation: gradientAnim 10s ease infinite, fadeIn 2s ease-out;
+      padding: 4rem 0; /* Added more vertical padding */
+      margin-bottom: 4rem; /* Added space between header and details */
+    }
+
+    header {
       position: relative;
       display: flex;
       align-items: center;
@@ -127,6 +133,7 @@
       max-width: 1000px;
       margin: 0 auto;
       width: 100%;
+      padding: 0 20px;
     }
 
     @keyframes gradientAnim {
@@ -192,7 +199,7 @@
       background: #1a1a1a;
       border-radius: 15px;
       padding: 2rem;
-      margin: 3rem auto;
+      margin: 0 auto 4rem auto; /* Increased bottom margin */
       max-width: 900px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.1);
       display: flex;
@@ -417,26 +424,30 @@
     </div>
   </div>
 
-  <main class="main-container">
-    <header>
-      <div class="header-left">
-        <div class="preview-container">
-          <img src="executor-ui.png" alt="Executor UI Preview" class="preview-img">
+  <div class="header-container">
+    <main class="main-container">
+      <header>
+        <div class="header-left">
+          <div class="preview-container">
+            <img src="executor-ui.png" alt="Executor UI Preview" class="preview-img">
+          </div>
         </div>
-      </div>
-      
-      <div class="header-right">
-        <h1>Tren.GG</h1>
-        <h2>Steroids, but for Roblox.</h2>
-      </div>
-    </header>
+        
+        <div class="header-right">
+          <h1>Tren.GG</h1>
+          <h2>Steroids, but for Roblox.</h2>
+        </div>
+      </header>
+    </main>
+  </div>
 
+  <main class="main-container">
     <div class="details-panel">
       <div class="details-info">
         <h3>Tren.GG Details</h3>
         <p><strong>Version:</strong> 2.0.1</p>
         <p><strong>Updated:</strong> 5th May 2025</p>
-        <p>The most powerful free Roblox executor available today.</p>
+        <p>The BEST Free Keyless Executor available!</p>
       </div>
       <div class="details-download">
         <a href="https://gofile.io/d/n3o77r" class="download-btn" target="_blank">
