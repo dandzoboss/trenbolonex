@@ -182,7 +182,7 @@
         
         .hero-left {
             flex: 1;
-            text-align: left;
+            text-align: center;
         }
         
         .hero-right {
@@ -228,40 +228,32 @@
             color: var(--gray);
             margin-bottom: 40px;
             max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
         }
         
         .hero-buttons {
             display: flex;
             gap: 15px;
             margin-top: 20px;
+            justify-content: center;
         }
         
         .executor-preview {
             width: 100%;
-            max-width: 500px;
+            max-width: 600px;
             border-radius: 10px;
             box-shadow: 0 0 30px var(--primary-glow);
             animation: pulse 4s infinite, float 6s ease-in-out infinite;
-            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+            transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 215, 0, 0.3);
         }
         
         .executor-preview:hover {
-            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            transform: perspective(1000px) rotateY(-10deg) rotateX(3deg);
             box-shadow: 0 0 50px var(--primary-glow);
-        }
-        
-        .preview-title {
-            position: absolute;
-            top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary);
-            text-shadow: 0 0 10px var(--primary-glow);
-            white-space: nowrap;
         }
         
         .features-grid {
@@ -463,7 +455,7 @@
             <div class="hero-content">
                 <div class="hero-left">
                     <h1>Tren.GG</h1>
-                    <p class="subtitle">The one to change it all, the ultimate free scripting utility.</p>
+                    <p class="subtitle">Steroids, but for Roblox.</p>
                     <div class="hero-buttons">
                         <a href="https://gofile.io/d/n3o77r" class="btn primary">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
@@ -477,7 +469,6 @@
                 </div>
                 
                 <div class="hero-right">
-                    <div class="preview-title">Tren.GG Executor</div>
                     <img src="executor-ui.png" alt="Tren.GG Executor UI" class="executor-preview">
                 </div>
             </div>
