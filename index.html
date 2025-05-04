@@ -42,9 +42,15 @@
         }
         
         @keyframes pulse {
-            0% { opacity: 0.8; }
-            50% { opacity: 1; }
-            100% { opacity: 0.8; }
+            0% { opacity: 0.8; box-shadow: 0 0 20px var(--primary-glow); }
+            50% { opacity: 1; box-shadow: 0 0 40px var(--primary-glow); }
+            100% { opacity: 0.8; box-shadow: 0 0 20px var(--primary-glow); }
+        }
+        
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px var(--primary-glow); }
+            50% { text-shadow: 0 0 20px var(--primary-glow), 0 0 30px var(--primary-glow); }
+            100% { text-shadow: 0 0 10px var(--primary-glow); }
         }
         
         html, body {
@@ -163,11 +169,28 @@
         .hero {
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .hero-left {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .hero-right {
+            flex: 1;
+            display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            padding-top: 80px;
+            position: relative;
         }
         
         .section-tag {
@@ -191,6 +214,7 @@
             font-size: 5rem;
             font-weight: 700;
             letter-spacing: -1px;
+            animation: glow 3s infinite;
         }
         
         h2 {
@@ -204,15 +228,40 @@
             color: var(--gray);
             margin-bottom: 40px;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
         
         .hero-buttons {
             display: flex;
             gap: 15px;
             margin-top: 20px;
-            justify-content: center;
+        }
+        
+        .executor-preview {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px var(--primary-glow);
+            animation: pulse 4s infinite, float 6s ease-in-out infinite;
+            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .executor-preview:hover {
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            box-shadow: 0 0 50px var(--primary-glow);
+        }
+        
+        .preview-title {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-shadow: 0 0 10px var(--primary-glow);
+            white-space: nowrap;
         }
         
         .features-grid {
@@ -342,6 +391,30 @@
             border-top: 1px solid rgba(255, 215, 0, 0.1);
         }
         
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-left {
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .executor-preview {
+                max-width: 90%;
+            }
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 3rem;
@@ -387,17 +460,26 @@
     
     <section class="hero">
         <div class="container">
-            <h1>Tren.GG</h1>
-            <p class="subtitle">The one to change it all, the ultimate free scripting utility.</p>
-            <div class="hero-buttons">
-                <a href="https://gofile.io/d/n3o77r" class="btn primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                    Download Tren.GG
-                </a>
-                <a href="https://discord.gg/FxNfxXTsPT" class="btn">
-                    <img src="discord.png" alt="Discord Icon">
-                    Discord
-                </a>
+            <div class="hero-content">
+                <div class="hero-left">
+                    <h1>Tren.GG</h1>
+                    <p class="subtitle">The one to change it all, the ultimate free scripting utility.</p>
+                    <div class="hero-buttons">
+                        <a href="https://gofile.io/d/n3o77r" class="btn primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Download Tren.GG
+                        </a>
+                        <a href="https://discord.gg/FxNfxXTsPT" class="btn">
+                            <img src="discord.png" alt="Discord Icon">
+                            Discord
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-right">
+                    <div class="preview-title">Tren.GG Executor</div>
+                    <img src="executor-ui.png" alt="Tren.GG Executor UI" class="executor-preview">
+                </div>
             </div>
         </div>
     </section>
@@ -562,7 +644,7 @@
             <h2>Start Using Tren.GG</h2>
             <p class="subtitle">Unlock the power of Tren.GG now, completely free.</p>
             
-            <div class="hero-buttons">
+            <div class="hero-buttons" style="justify-content: center;">
                 <a href="https://gofile.io/d/n3o77r" class="btn primary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                     Download Tren.GG
